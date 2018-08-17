@@ -22,6 +22,12 @@
   %b Phone number:
   = @member.phone_number
 
+%h4 Parents
+%p= link_to_if @member.parent_1, @member.parent_1, @member.parent_1
+%p= link_to_if @member.parent_2, @member.parent_2, @member.parent_2
+
+%br
+
 = link_to 'Edit', edit_member_path(@member)
 \|
 = link_to 'Back', members_path
