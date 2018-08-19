@@ -1,10 +1,17 @@
-User.create!(
+Admin.create!(
   email: 'admin@familytree.xyz',
   password: 'admin',
   password_confirmation: 'admin',
   first_name: 'Admin',
-  last_name: 'Admin',
-  type: 'Admin'
+  last_name: 'Admin'
+)
+
+Client.create!(
+  email: 'client@familytree.xyz',
+  password: 'client',
+  password_confirmation: 'client',
+  first_name: 'Client',
+  last_name: 'Client'
 )
 
 parent_1 = Member.create!(

@@ -25,9 +25,9 @@
         %td= member.address
         %td= member.phone_number
         %td= link_to 'Show', member
-        %td= link_to 'Edit', edit_member_path(member)
-        %td= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Edit', edit_member_path(member) if can?(:edit, member)
+        %td= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } if can?(:destroy, member)
 
 %br
 
-= link_to 'New Member', new_member_path
+= link_to 'New Member', new_member_path if can?(:create, Member)
