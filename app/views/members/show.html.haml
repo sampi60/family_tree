@@ -27,15 +27,34 @@
 %p= link_to_if @member.parent_2, @member.parent_2, @member.parent_2
 
 %h4 Children
-- @member.children.each do |child|
-  %p= link_to child, child
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Sex
+      %th Age
+      %th Birthdate
+      %th Address
+      %th Phone number
+
+  %tbody
+    = render partial: 'member', collection: @member.children, as: :member
 
 %h4 Siblings
-- @member.siblings.each do |sibling|
-  %p= link_to sibling, sibling
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Sex
+      %th Age
+      %th Birthdate
+      %th Address
+      %th Phone number
+
+  %tbody
+    = render partial: 'member', collection: @member.siblings, as: :member 
 
 %br
 
-= link_to 'Edit', edit_member_path(@member) if can?(:edit, @member)
-\|
-= link_to 'Back', members_path
+= link_to 'Back', members_path, class: 'btn btn-default'
+= link_to 'Edit', edit_member_path(@member), class: 'btn btn-warning' if can?(:edit, @member)

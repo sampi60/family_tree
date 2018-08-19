@@ -1,0 +1,7 @@
+%tr
+  %td= link_to member, member
+  %td= member.sex
+  %td= member.birthdate.strftime("%d/%m/%Y")
+  %td= "#{(Time.now.year - member.birthdate.year)} y"
+  %td= member.address
+  %td= member.phone_number

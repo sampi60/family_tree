@@ -3,7 +3,9 @@ Admin.create!(
   password: 'admin',
   password_confirmation: 'admin',
   first_name: 'Admin',
-  last_name: 'Admin'
+  last_name: 'Admin',
+  sex: 'M',
+  birthdate: 30.years.ago
 )
 
 Client.create!(
@@ -11,7 +13,9 @@ Client.create!(
   password: 'client',
   password_confirmation: 'client',
   first_name: 'Client',
-  last_name: 'Client'
+  last_name: 'Client',
+  sex: 'M',
+  birthdate: 30.years.ago
 )
 
 parent_1 = Member.create!(
@@ -20,6 +24,8 @@ parent_1 = Member.create!(
   password_confirmation: 'parent1',
   first_name: 'Parent1',
   last_name: 'Parent1',
+  sex: 'M',
+  birthdate: 30.years.ago,
   address: 'ul. Grunwaldzka 1, Gdańsk',
   phone_number: '(+48) 500 500 500'
 )
@@ -30,6 +36,8 @@ parent_2 = Member.create!(
   password_confirmation: 'parent2',
   first_name: 'Parent2',
   last_name: 'Parent2',
+  sex: 'M',
+  birthdate: 30.years.ago,
   address: 'ul. Grunwaldzka 1, Gdańsk',
   phone_number: '(+48) 500 500 500'
 )
@@ -40,6 +48,8 @@ Member.create!(
   password_confirmation: 'member1',
   first_name: 'Member1',
   last_name: 'Member1',
+  sex: 'M',
+  birthdate: 30.years.ago,
   address: 'ul. Grunwaldzka 1, Gdańsk',
   phone_number: '(+48) 500 500 500',
   parent_1: parent_1,
@@ -52,6 +62,8 @@ Member.create!(
   password_confirmation: 'member2',
   first_name: 'Member2',
   last_name: 'Member2',
+  sex: 'M',
+  birthdate: 30.years.ago,
   address: 'ul. Grunwaldzka 1, Gdańsk',
   phone_number: '(+48) 500 500 500',
   parent_1: parent_1,
