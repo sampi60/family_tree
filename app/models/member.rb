@@ -20,6 +20,10 @@ class Member < User
     User.where(parent_1: parents).or(User.where(parent_2: parents)).where.not(id: id)
   end
 
+  def self.search(q)
+    where "first_name LIKE ? OR last_name LIKE ?", "%#{q}%", "%#{q}%"
+  end
+
   protected
 
     def password_required?

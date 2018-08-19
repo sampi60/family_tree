@@ -1,0 +1,20 @@
+%h2.page-header Wyszkiwanie '#{@q}'
+
+%h5.page-header
+  Wyniki
+  %span.badge{title: 'Ilość'}= @members.count
+- if @members.any?
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th= t 'activerecord.attributes.member.name'
+        %th= t 'activerecord.attributes.member.sex'
+        %th= t 'activerecord.attributes.member.age'
+        %th= t 'activerecord.attributes.member.birthdate'
+        %th= t 'activerecord.attributes.member.address'
+        %th= t 'activerecord.attributes.member.phone_number'
+
+    %tbody
+      = render partial: 'member', collection: @members
+- else
+  %em Brak wyników.
