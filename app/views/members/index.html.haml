@@ -14,3 +14,5 @@
     = render partial: 'member', collection: @members, as: :member
 
 = link_to 'New Member', new_member_path, class: 'btn btn-success' if can?(:create, Member)
+
+= will_paginate @members
