@@ -26,6 +26,14 @@
 %p= link_to_if @member.parent_1, @member.parent_1, @member.parent_1
 %p= link_to_if @member.parent_2, @member.parent_2, @member.parent_2
 
+%h4 Children
+- @member.children.each do |child|
+  %p= link_to child, child
+
+%h4 Siblings
+- @member.siblings.each do |sibling|
+  %p= link_to sibling, sibling
+
 %br
 
 = link_to 'Edit', edit_member_path(@member)

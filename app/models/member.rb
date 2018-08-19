@@ -8,6 +8,18 @@ class Member < User
     "#{first_name} #{last_name}"
   end
 
+  def parents
+    [ parent_1, parent_2 ].compact
+  end
+
+  def children
+    User.where(parent_1: id).or(User.where(parent_2: id))
+  end
+
+  def siblings
+    User.where(parent_1: parents).or(User.where(parent_2: parents)).where.not(id: id)
+  end
+
   protected
 
     def password_required?
