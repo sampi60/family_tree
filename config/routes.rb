@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :members
-  devise_for :users
-  root 'members#index'
+  scope "/:locale" do
+    resources :members
+    devise_for :users
+    root 'members#index'
+  end
 end

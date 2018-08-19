@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      member:
+        name: Name and surname
+        sex: Sex
+        age: Age
+        birthdate: Birth Date
+        address: Address
+        phone_number: Phone

@@ -1,0 +1,10 @@
+pl:
+  activerecord:
+    attributes:
+      member:
+        name: Imię i nazwisko
+        sex: Płeć
+        age: Wiek
+        birthdate: Data urodzenia
+        address: Adres
+        phone_number: Telefon

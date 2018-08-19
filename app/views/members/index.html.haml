@@ -3,12 +3,12 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
-      %th Name
-      %th Sex
-      %th Age
-      %th Birthdate
-      %th Address
-      %th Phone number
+      %th= t 'activerecord.attributes.member.name'
+      %th= t 'activerecord.attributes.member.sex'
+      %th= t 'activerecord.attributes.member.age'
+      %th= t 'activerecord.attributes.member.birthdate'
+      %th= t 'activerecord.attributes.member.address'
+      %th= t 'activerecord.attributes.member.phone_number'
 
   %tbody
     = render partial: 'member', collection: @members, as: :member

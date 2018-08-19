@@ -22,9 +22,15 @@
           <%= link_to 'Family Tree', root_url, class: "navbar-brand" %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Wyloguj', destroy_user_session_path, method: :delete if signed_in? %></li>
-          </ul>
+          <% if signed_in? %>
+            <ul class="nav navbar-nav">
+              <li class="<%= 'active' if I18n.locale == :pl %>"><%= link_to('pl', locale: :pl) %></li>
+              <li class="<%= 'active' if I18n.locale == :en %>"><%= link_to('en', locale: :en) %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% end %>
         </div>
       </div>
     </nav>
