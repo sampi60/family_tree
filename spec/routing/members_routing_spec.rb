@@ -18,7 +18,6 @@ RSpec.describe MembersController, type: :routing do
       expect(:get => "/members/1/edit").to route_to("members#edit", :id => "1")
     end
 
-
     it "routes to #create" do
       expect(:post => "/members").to route_to("members#create")
     end
@@ -33,6 +32,10 @@ RSpec.describe MembersController, type: :routing do
 
     it "routes to #destroy" do
       expect(:delete => "/members/1").to route_to("members#destroy", :id => "1")
+    end
+
+    it "routes to #search" do
+      expect(get: '/members/search').to route_to('members#search')
     end
   end
 end

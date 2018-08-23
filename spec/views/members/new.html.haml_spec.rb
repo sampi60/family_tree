@@ -1,21 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "members/new", type: :view do
-  before(:each) do
-    assign(:member, Member.new(
-      :email => "MyString",
-      :first_name => "MyString",
-      :last_name => "MyString",
-      :sex => "MyString",
-      :address => "MyString",
-      :phone_number => "MyString"
-    ))
-  end
+  before(:each) { @member = assign(:member, create(:member)) }
 
   it "renders new member form" do
     render
 
-    assert_select "form[action=?][method=?]", members_path, "post" do
+    assert_select "form[action=?][method=?]", member_path(I18n.locale, @member), "post" do
 
       assert_select "input[name=?]", "member[email]"
 

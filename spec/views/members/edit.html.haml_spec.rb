@@ -1,21 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "members/edit", type: :view do
-  before(:each) do
-    @member = assign(:member, Member.create!(
-      :email => "MyString",
-      :first_name => "MyString",
-      :last_name => "MyString",
-      :sex => "MyString",
-      :address => "MyString",
-      :phone_number => "MyString"
-    ))
-  end
+  before(:each) { @member = assign(:member, create(:member)) }
 
   it "renders the edit member form" do
     render
 
-    assert_select "form[action=?][method=?]", member_path(@member), "post" do
+    assert_select "form[action=?][method=?]", member_path(I18n.locale, @member), "post" do
 
       assert_select "input[name=?]", "member[email]"
 

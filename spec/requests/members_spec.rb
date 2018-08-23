@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Members", type: :request do
+  login_user
+
   describe "GET /members" do
     it "works! (now write some real specs)" do
       get members_path

@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @member
+= link_to 'Show', member_path(I18n.locale, @member)
 \|
 = link_to 'Back', members_path
